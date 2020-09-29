@@ -2,6 +2,7 @@ import { html } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map.js';
 export default function template() {
     const classes = {
+        'is-disabled': this.disabled,
         'is-selected': this.selected,
     };
     return html `

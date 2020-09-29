@@ -1,10 +1,11 @@
 import { Base } from '@spectrum/sp-base';
 export declare class SideNavItem extends Base {
-    static componentStyles: any[];
+    static componentStyles: import("lit-element").CSSResult[];
     multiLevel: boolean;
     firstLevel: boolean;
     secondLevel: boolean;
     selected: boolean;
+    disabled: boolean;
     href: string;
     label: string;
     protected items: HTMLElement;

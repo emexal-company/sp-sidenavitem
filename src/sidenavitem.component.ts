@@ -12,23 +12,22 @@
     limitations under the License.
 */
 
-import { query, css, customElement, LitElement, property, PropertyValues } from 'lit-element';
+import { query, customElement, property} from 'lit-element';
 
-import { Spectrum } from '@spectrum/config/spectrum-config';
 import { Base } from '@spectrum/sp-base';
 
-//import sidenavStyles from '../../sidenav/src/sidenav.styles';
+import sidenavitemStyles from './sidenavitem.styles';
 import template from './sidenavitem.template';
-//import { SideNav } from '@spectrum/sp-sidenav';
 
 @customElement('sp-sidenavitem')
 export class SideNavItem extends Base {
-  public static componentStyles = [];
+  public static componentStyles = [sidenavitemStyles];
 
   @property({ type: Boolean, attribute: 'multi-level' }) public multiLevel: boolean = false;
   @property({ type: Boolean, attribute: 'first-level' }) public firstLevel: boolean = false;
   @property({ type: Boolean, attribute: 'second-level' }) public secondLevel: boolean = false;
   @property({ type: Boolean, attribute: 'selected' }) public selected: boolean = false;
+  @property({ type: Boolean, attribute: 'disabled' }) public disabled: boolean = false;
   @property({ type: String, attribute: 'href' }) public href: string = '#';
 
   @property({ type: String }) public label: string = '';

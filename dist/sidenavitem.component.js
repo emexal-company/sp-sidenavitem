@@ -1,9 +1,8 @@
 import { __decorate, __metadata } from "tslib";
 import { query, customElement, property } from 'lit-element';
 import { Base } from '@spectrum/sp-base';
-//import sidenavStyles from '../../sidenav/src/sidenav.styles';
+import sidenavitemStyles from './sidenavitem.styles';
 import template from './sidenavitem.template';
-//import { SideNav } from '@spectrum/sp-sidenav';
 let SideNavItem = class SideNavItem extends Base {
     constructor() {
         super(...arguments);
@@ -11,6 +10,7 @@ let SideNavItem = class SideNavItem extends Base {
         this.firstLevel = false;
         this.secondLevel = false;
         this.selected = false;
+        this.disabled = false;
         this.href = '#';
         this.label = '';
         /*protected firstUpdated() {
@@ -34,7 +34,7 @@ let SideNavItem = class SideNavItem extends Base {
         return template.call(this);
     }
 };
-SideNavItem.componentStyles = [];
+SideNavItem.componentStyles = [sidenavitemStyles];
 __decorate([
     property({ type: Boolean, attribute: 'multi-level' }),
     __metadata("design:type", Boolean)
@@ -51,6 +51,10 @@ __decorate([
     property({ type: Boolean, attribute: 'selected' }),
     __metadata("design:type", Boolean)
 ], SideNavItem.prototype, "selected", void 0);
+__decorate([
+    property({ type: Boolean, attribute: 'disabled' }),
+    __metadata("design:type", Boolean)
+], SideNavItem.prototype, "disabled", void 0);
 __decorate([
     property({ type: String, attribute: 'href' }),
     __metadata("design:type", String)

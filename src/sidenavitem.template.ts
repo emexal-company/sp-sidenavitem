@@ -19,6 +19,7 @@ import { SideNavItem } from './sidenavitem.component';
 
 export default function template(this: SideNavItem) {
     const classes = {
+        'is-disabled': this.disabled,
         'is-selected': this.selected,
     }
     return html`
